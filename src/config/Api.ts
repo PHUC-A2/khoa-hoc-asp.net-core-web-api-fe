@@ -1,7 +1,3 @@
-// =========================================================
-// FILE Api.ts ĐẦY ĐỦ SAU KHI THÊM:
-// =========================================================
-
 import axios from "axios";
 import type { IBackendRes, IModelPaginate } from "../types/common";
 import type { ICauTrucDe } from "../types/CauTrucDe";

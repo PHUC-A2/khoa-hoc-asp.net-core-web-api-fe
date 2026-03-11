@@ -71,7 +71,7 @@ const CreatePart = ({
         <Modal
             open={open}
             width={800}
-            title="Thêm thành phần"
+            title="Thêm cấu trúc đề thành phần"
             onCancel={handleCancel}
             onOk={handleSubmit}
             okText="Tạo"
@@ -88,7 +88,7 @@ const CreatePart = ({
                     label="Ghi chú"
                     name="note"
                 >
-                    <Input placeholder="Nhập ghi chú" />
+                    <Input placeholder="Nhập ghi chú (nếu có)" />
                 </Form.Item>
 
                 <Flex gap={16}>
@@ -99,7 +99,10 @@ const CreatePart = ({
                         rules={[{ required: true }]}
                         style={{ flex: 1 }}
                     >
-                        <InputNumber style={{ width: "100%" }} />
+                        <InputNumber
+                            style={{ width: "100%" }}
+                            placeholder="VD: 1 = Trắc nghiệm, 2 = Tự luận"
+                        />
                     </Form.Item>
 
                     <Form.Item
@@ -108,7 +111,10 @@ const CreatePart = ({
                         rules={[{ required: true }]}
                         style={{ flex: 1 }}
                     >
-                        <InputNumber style={{ width: "100%" }} />
+                        <InputNumber
+                            style={{ width: "100%" }}
+                            placeholder="VD: 1, 2, 3..."
+                        />
                     </Form.Item>
 
                 </Flex>
@@ -124,6 +130,7 @@ const CreatePart = ({
                         <InputNumber
                             style={{ width: "100%" }}
                             step={0.1}
+                            placeholder="VD: 1.0, 1.5, 2.0"
                         />
                     </Form.Item>
 
@@ -146,7 +153,10 @@ const CreatePart = ({
                         rules={[{ required: true }]}
                         style={{ flex: 1 }}
                     >
-                        <InputNumber style={{ width: "100%" }} />
+                        <InputNumber
+                            style={{ width: "100%" }}
+                            placeholder="Nhập số câu hỏi"
+                        />
                     </Form.Item>
 
                     <Form.Item
@@ -155,7 +165,10 @@ const CreatePart = ({
                         rules={[{ required: true }]}
                         style={{ flex: 1 }}
                     >
-                        <InputNumber style={{ width: "100%" }} />
+                        <InputNumber
+                            style={{ width: "100%" }}
+                            placeholder="Tổng số câu trong đề"
+                        />
                     </Form.Item>
 
                 </Flex>
@@ -165,7 +178,10 @@ const CreatePart = ({
                     name="total_score"
                     rules={[{ required: true }]}
                 >
-                    <InputNumber style={{ width: "100%" }} />
+                    <InputNumber
+                        style={{ width: "100%" }}
+                        placeholder="VD: 10.0"
+                    />
                 </Form.Item>
 
             </Form>

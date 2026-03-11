@@ -35,7 +35,7 @@ const ExamStructurePart = ({ structureId }: Props) => {
     return (
         <>
             <Card
-                title="Cấu trúc câu thành phần"
+                title="Cấu trúc đề thành phần"
                 style={{ marginTop: 16 }}
                 extra={
                     <>
