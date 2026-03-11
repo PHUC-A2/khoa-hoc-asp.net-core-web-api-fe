@@ -1,0 +1,63 @@
+.page-about {
+    width           : 100%;
+    min-height      : 100vh;
+    background-color: var(--primary-background);
+    color           : var(--text-page);
+
+    .page-about-content {
+        max-width: 1200px;
+        margin   : 0 auto;
+        padding  : 24px 16px;
+    }
+
+    .page-title {
+        text-align   : center;
+        margin-bottom: 48px;
+
+        h1.ant-typography.css-var-root {
+            color         : var(--text-page);
+            font-size     : 48px;
+            letter-spacing: 1.5px;
+        }
+
+        .ant-typography.css-var-root {
+            font-size: 18px;
+            color    : var(--text-color);
+            opacity  : 0.85;
+        }
+    }
+
+    .section-features {
+        margin-top   : 40px;
+        margin-bottom: 60px;
+
+        .card-feature {
+            background-color: var(--card-bg);
+            color           : var(--text-page);
+            border-radius   : 12px;
+            text-align      : center;
+            padding         : 20px;
+
+            .feature-icon {
+                font-size    : 32px;
+                color        : var(--text-color);
+                margin-bottom: 12px;
+            }
+
+            // h4 {
+            //     color        : var(--title-color);
+            //     margin-bottom: 8px;
+            // }
+
+            // p {
+            //     color    : var(--text-page);
+            //     font-size: 16px;
+            // }
+
+            .ant-typography.css-var-root {
+                color    : var(--text-color);
+                font-size: 16px;
+            }
+        }
+    }
+}
