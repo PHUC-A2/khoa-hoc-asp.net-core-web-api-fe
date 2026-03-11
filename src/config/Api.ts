@@ -6,7 +6,22 @@ import type { ICauTrucDeThanhPhanSub, ICauTrucDeThanhPhanSubCreate, ICauTrucDeTh
 
 const BASE = import.meta.env.VITE_BACKEND_URL;
 
-// ================== CAU TRUC DE ==================
+// ================== CAU TRUC DE - CLIENT ==================
+
+export const getClientExamStructures = () =>
+    axios.get<IBackendRes<IModelPaginate<ICauTrucDe>>>(
+        `${BASE}/api/v1/SMT_CauTrucDe`
+    );
+
+// export const getClientExamStructures = () =>
+//     axios.get<IBackendRes<IModelPaginate<ICauTrucDe>>>(...)
+
+export const getClientExamStructureById = (id: number) =>
+    axios.get<IBackendRes<ICauTrucDe>>(
+        `${BASE}/api/v1/SMT_CauTrucDe/${id}`
+    );
+
+// ================== CAU TRUC DE - ADMIN ==================
 
 export const getAllExamStructures = (query: string) =>
     axios.get<IBackendRes<IModelPaginate<ICauTrucDe>>>(

@@ -42,19 +42,15 @@ export const fetchExamStructures = createAsyncThunk<
     async (query, { rejectWithValue }) => {
         try {
             const res = await getAllExamStructures(query);
-
             if (res.data.statusCode === 200 && res.data.data) {
                 return {
                     result: res.data.data.result,
                     meta: res.data.data.meta
                 };
             }
-
             return rejectWithValue(res.data.message || 'Lấy cấu trúc đề thất bại');
         } catch (error: any) {
-            return rejectWithValue(
-                error?.response?.data?.message || 'Lỗi hệ thống'
-            );
+            return rejectWithValue(error?.response?.data?.message || 'Lỗi hệ thống');
         }
     }
 );
@@ -68,16 +64,12 @@ export const fetchDeletedExamStructures = createAsyncThunk<
     async (_, { rejectWithValue }) => {
         try {
             const res = await getDeletedExamStructures();
-
             if (res.data.statusCode === 200 && res.data.data) {
                 return res.data.data;
             }
-
             return rejectWithValue(res.data.message || 'Lấy danh sách đã xóa thất bại');
         } catch (error: any) {
-            return rejectWithValue(
-                error?.response?.data?.message || 'Lỗi hệ thống'
-            );
+            return rejectWithValue(error?.response?.data?.message || 'Lỗi hệ thống');
         }
     }
 );

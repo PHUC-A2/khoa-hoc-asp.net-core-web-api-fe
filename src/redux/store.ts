@@ -2,12 +2,15 @@ import { configureStore } from '@reduxjs/toolkit'
 import examStructureReducer from './features/examStructureSlice'
 import examStructurePartReducer from './features/examStructurePartSlice'
 import examStructurePartSubReducer from './features/examStructurePartSubSlice'
+import examStructureClientReducer from "./features/examStructureClientSlice";
+
 
 export const store = configureStore({
     reducer: {
         examStructure: examStructureReducer,
         examStructurePart: examStructurePartReducer,
         examStructurePartSub: examStructurePartSubReducer,
+        examStructureClient: examStructureClientReducer,
     }
 })
 

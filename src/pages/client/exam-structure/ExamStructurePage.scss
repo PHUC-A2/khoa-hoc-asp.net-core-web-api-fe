@@ -1,0 +1,263 @@
+.exam-structure-page {
+    --gold-main: #faad14;
+
+    &.light {
+        background-color: #ffffff;
+        --card-bg       : #ffffff;
+        --card-hover-bg : #fffbf0;
+        --text-main     : #1a2733;
+        --text-sub      : #64748b;
+        --border        : rgba(0, 0, 0, 0.08);
+        --shadow        : rgba(0, 0, 0, 0.06);
+    }
+
+    &.dark {
+        background-color: #0d141c;
+        --card-bg       : #1e2936;
+        --card-hover-bg : #243040;
+        --text-main     : #e2e8f0;
+        --text-sub      : #94a3b8;
+        --border        : rgba(255, 255, 255, 0.08);
+        --shadow        : rgba(0, 0, 0, 0.3);
+    }
+
+    .page-content {
+        max-width: 1200px;
+        margin   : 0 auto;
+        padding  : 80px 20px 60px;
+    }
+
+    // --- Page Header ---
+    .page-header {
+        text-align   : center;
+        margin-bottom: 48px;
+
+        .page-title {
+            font-size  : clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color      : var(--text-main) !important;
+            margin     : 0 0 12px !important;
+
+            .gold-text {
+                color: var(--gold-main);
+            }
+        }
+
+        .page-subtitle {
+            font-size: 1rem;
+            color    : var(--text-sub);
+            margin   : 0;
+        }
+    }
+
+    // --- Search & Filter bar ---
+    .filter-bar {
+        margin-bottom: 32px;
+        display      : flex;
+        gap          : 12px;
+        flex-wrap    : wrap;
+        align-items  : center;
+
+        .ant-input-affix-wrapper,
+        .ant-select-selector {
+            background  : var(--card-bg) !important;
+            border-color: var(--border) !important;
+            color       : var(--text-main) !important;
+        }
+    }
+
+    // --- Cards Grid ---
+    .cards-grid {
+        display              : grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap                  : 24px;
+    }
+
+    // --- Exam Card ---
+    .exam-card {
+        background   : var(--card-bg);
+        border       : 1px solid var(--border);
+        border-radius: 16px;
+        padding      : 28px 24px;
+        cursor       : pointer;
+        transition   : all 0.25s ease;
+        position     : relative;
+        overflow     : hidden;
+
+        &::before {
+            content         : '';
+            position        : absolute;
+            top             : 0;
+            left            : 0;
+            right           : 0;
+            height          : 4px;
+            background      : linear-gradient(90deg, var(--gold-main), #ffec3d);
+            transform       : scaleX(0);
+            transform-origin: left;
+            transition      : transform 0.3s ease;
+        }
+
+        &:hover {
+            transform   : translateY(-6px);
+            background  : var(--card-hover-bg);
+            box-shadow  : 0 12px 32px var(--shadow);
+            border-color: var(--gold-main);
+
+            &::before {
+                transform: scaleX(1);
+            }
+        }
+
+        .card-header {
+            display        : flex;
+            justify-content: space-between;
+            align-items    : flex-start;
+            margin-bottom  : 16px;
+        }
+
+        .card-title {
+            font-size   : 1.05rem;
+            font-weight : 700;
+            color       : var(--text-main);
+            line-height : 1.4;
+            flex        : 1;
+            margin-right: 12px;
+        }
+
+        .card-badge {
+            flex-shrink  : 0;
+            font-size    : 0.72rem;
+            font-weight  : 600;
+            padding      : 3px 10px;
+            border-radius: 20px;
+            background   : rgba(250, 173, 20, 0.12);
+            color        : var(--gold-main);
+            border       : 1px solid rgba(250, 173, 20, 0.3);
+        }
+
+        .card-note {
+            font-size    : 0.875rem;
+            color        : var(--text-sub);
+            margin-bottom: 20px;
+            line-height  : 1.5;
+            min-height   : 40px;
+        }
+
+        .card-stats {
+            display  : flex;
+            gap      : 16px;
+            flex-wrap: wrap;
+
+            .stat-item {
+                display    : flex;
+                align-items: center;
+                gap        : 6px;
+                font-size  : 0.82rem;
+                color      : var(--text-sub);
+
+                .stat-icon {
+                    color    : var(--gold-main);
+                    font-size: 1rem;
+                }
+
+                strong {
+                    color: var(--text-main);
+                }
+            }
+        }
+
+        .card-footer {
+            margin-top     : 20px;
+            padding-top    : 16px;
+            border-top     : 1px solid var(--border);
+            display        : flex;
+            justify-content: space-between;
+            align-items    : center;
+
+            .detail-btn {
+                background   : transparent;
+                border       : 1px solid var(--gold-main);
+                color        : var(--gold-main);
+                border-radius: 8px;
+                font-weight  : 600;
+                font-size    : 0.82rem;
+                height       : 32px;
+                padding      : 0 14px;
+                transition   : all 0.2s;
+
+                &:hover {
+                    background: var(--gold-main);
+                    color     : #fff;
+                }
+            }
+
+            .tag-group {
+                display: flex;
+                gap    : 6px;
+            }
+        }
+    }
+
+    // --- Empty state ---
+    .empty-state {
+        padding   : 80px 0;
+        text-align: center;
+    }
+
+    // --- Skeleton ---
+    .skeleton-grid {
+        display              : grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap                  : 24px;
+
+        .skeleton-card {
+            background   : var(--card-bg);
+            border       : 1px solid var(--border);
+            border-radius: 16px;
+            padding      : 28px 24px;
+            height       : 220px;
+        }
+    }
+}
+
+// --- Detail Modal ---
+.exam-detail-modal {
+    .detail-section {
+        margin-bottom: 24px;
+
+        .section-title {
+            font-size     : 0.8rem;
+            font-weight   : 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color         : #faad14;
+            margin-bottom : 12px;
+        }
+
+        .detail-grid {
+            display              : grid;
+            grid-template-columns: 1fr 1fr;
+            gap                  : 12px;
+
+            @media (max-width: 480px) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .detail-item {
+            display       : flex;
+            flex-direction: column;
+            gap           : 2px;
+
+            .item-label {
+                font-size: 0.75rem;
+                color    : #94a3b8;
+            }
+
+            .item-value {
+                font-size  : 0.95rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
